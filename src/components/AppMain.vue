@@ -1,7 +1,11 @@
 <script>
 import { store } from '../store.js';
+import SingleCard from './SingleCard.vue'
 export default {
     name: 'AppMain',
+    components: {
+        SingleCard,
+    },
     data() {
         return {
             store
@@ -11,16 +15,20 @@ export default {
 </script>
 
 <template>
-    <main>
-        <section id="cards">
-            <article class="single-card" v-for="cardItem in store.yuGiOhCards">
-                <img :src="cardItem.card_images[0].image_url" :alt="cardItem.name">
-                <h3>{{cardItem.name}}</h3>
-                <span>{{cardItem.archetype}}</span>
-            </article>
+    <main class="py-5">
+        <section id="cards" class="container d-flex flex-wrap my-5 p-4">
+            <!-- Import Cards -->
+            <SingleCard v-for="cardItem in store.yuGiOhCards" :cardProperty="cardItem" />
         </section>
     </main>
 </template>
 
 <style lang="scss" scoped>
+@use '../styles/partials/variables' as *;
+main {
+    background-color: $background;
+    section#cards {
+        background-color: $white;
+    }
+}
 </style>
