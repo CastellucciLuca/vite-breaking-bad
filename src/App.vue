@@ -17,6 +17,8 @@ export default {
 </template>
 
 <style lang="scss">
+// STYLE+FRAMEWORKS
+@use 'bootstrap/scss/bootstrap.scss' as *;
 @use './styles/general.scss' as *;
 @use './styles/partials/variables' as *;
 </style>

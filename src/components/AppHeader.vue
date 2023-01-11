@@ -29,14 +29,14 @@ export default {
     },
 }
 </script>
-
 <template>
     <header>
         <div class="container-fluid">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12 d-flex">
-                        <img src="../assets/Yu-Gi-Oh!_(Logo).jpg" alt="yugioh-logo">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/1/11/Yu-Gi-Oh%21_%28Logo%29.jpg"
+                            alt="Yu-Gi-Oh Main Logo" class="me-3">
                         <h1 class="py-3">Yu-Gi-Oh Api</h1>
                     </div>
                 </div>
@@ -44,10 +44,9 @@ export default {
         </div>
     </header>
 </template>
-
 <style lang="scss" scoped>
 img {
-    width: 150px;
+    width: 90px;
     object-fit: contain;
 }
 </style>
