@@ -35,7 +35,7 @@ article.single-card {
     background-image: url('https://www.cardmaker.net/uploads/cardmaker_resources/1/backgrounds/normal.png');
     margin: 0rem .5rem 1rem;
     border-radius: .5rem;
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 
     div.img-card {
         position: relative;
