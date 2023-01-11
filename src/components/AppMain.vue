@@ -1,15 +1,28 @@
 <script>
 import { store } from '../store.js';
 import SingleCard from './SingleCard.vue'
+import AppLoader from './AppLoader.vue'
 export default {
     name: 'AppMain',
     components: {
         SingleCard,
+        AppLoader
     },
     data() {
         return {
-            store
+            store,
+            loadCards: false
         }
+    },
+    methods: {
+        isLoading() {
+            setTimeout(() => {
+                this.loadCards = true;
+            }, 2000);
+        }
+    },
+    created() {
+        this.isLoading()
     }
 }
 </script>
@@ -18,11 +31,13 @@ export default {
         <section id="cards" class="container d-flex my-5 p-4 flex-column">
             <!-- CARD FOUND -->
             <div class="card-found py-3">
-                <span class="fw-bold ps-4">Found {{store.yuGiOhCards.length}} cards</span>
+                <span v-if="!loadCards" class="fw-bold ps-4">Found ... cards</span>
+                <span v-else class="fw-bold ps-4">Found {{ store.yuGiOhCards.length }} cards</span>
             </div>
             <!-- GENERATED CARDS -->
-            <div class="cards-container d-flex flex-wrap ">
-                <!-- IMPORT CARDS -->
+            <AppLoader v-if="(!loadCards) && (store.yuGiOhCards.length > 0)" class="m-auto" />
+            <div v-else class="cards-container d-flex flex-wrap ">
+                <!-- IMPORT CARD -->
                 <SingleCard v-for="cardItem in store.yuGiOhCards" :cardProperty="cardItem" />
             </div>
         </section>
