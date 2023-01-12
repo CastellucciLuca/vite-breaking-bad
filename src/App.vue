@@ -12,7 +12,7 @@ export default {
     return {
       store,
       apiUrl: 'https://db.ygoprodeck.com/api/v7/cardinfo.php?',
-      archetypeSelected: 'Alien'
+      archetypeSelected: 'alien'
     }
   },
   methods: {
@@ -31,7 +31,7 @@ export default {
         .catch((error) => {
           console.log(error);
         });
-    },
+    }
   },
   created() {
     this.getApiElement(this.archetypeSelected)
@@ -40,16 +40,14 @@ export default {
 </script>
 
 <template>
-  <!-- Import Header -->
+  <!-- IMPORT HEADER -->
   <AppHeader />
-  <!-- Import Main -->
-  <AppMain @sendChoseArchetype="getApiElement()" />
+  <!-- IMPORT MAIN -->
+  <AppMain @sendChoseArchetype="getApiElement" />
 </template>
 
 <style lang="scss">
-// Import style / framework
 @use 'bootstrap/scss/bootstrap.scss' as *;
 @use './styles/general.scss' as *;
 @use './styles/partials/variables' as *;
-// Style
 </style>

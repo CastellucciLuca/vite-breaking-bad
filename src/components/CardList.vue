@@ -18,11 +18,11 @@ export default {
         <span class="fw-bold ps-4">Found {{ store.yuGiOhCards.length }} cards</span>
     </div>
 
-    <!-- Generated Cards -->
+    <!-- GENERATED CARDS -->
     <AppLoader v-if="store.yuGiOhCards.length === 0" class="m-auto" />
 
     <div v-else class="cards-container d-flex flex-wrap ">
-        <!-- Import Cards -->
+        <!-- IMPORTED CARDS-->
         <SingleCard v-for="cardItem in store.yuGiOhCards" :cardProperty="cardItem" />
     </div>
 </template>
